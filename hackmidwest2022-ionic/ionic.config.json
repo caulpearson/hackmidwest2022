@@ -1,0 +1,7 @@
+{
+  "name": "hackmidwest2022-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
