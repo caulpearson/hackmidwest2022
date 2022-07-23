@@ -5,8 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <div id="Zip-Code-Submit">
-    <ion-input autocomplete="postal-code" placeholder="Enter Zip Code"></ion-input>
-    <button>Submit</button>
-  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter Zip Code:</mat-label>
+          <input matInput id="ZipCode" placeholder="Zip Code" pattern="^\d{5}?" minlength="5" maxlength="5">
+        </mat-form-field>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <button id="ZipCodeSubmit" mat-raised-button>Submit</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
