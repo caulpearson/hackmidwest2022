@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'statepicker',
+    loadChildren: () => import('./statepicker/statepicker.module').then( m => m.StatepickerPageModule)
+  },
+  {
+    path: 'zipcodepicker',
+    loadChildren: () => import('./zipcodepicker/zipcodepicker.module').then( m => m.ZipcodepickerPageModule)
+  },
 ];
 
 @NgModule({
