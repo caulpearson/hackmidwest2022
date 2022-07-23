@@ -8,11 +8,16 @@ import { ZipcodepickerPageRoutingModule } from './zipcodepicker-routing.module';
 
 import { ZipcodepickerPage } from './zipcodepicker.page';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input'; 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    MatInputModule,
+    MatButtonModule,
     ZipcodepickerPageRoutingModule
   ],
   declarations: [ZipcodepickerPage]
