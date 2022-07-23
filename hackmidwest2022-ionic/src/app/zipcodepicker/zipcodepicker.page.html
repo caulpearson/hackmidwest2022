@@ -9,16 +9,13 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <mat-form-field appearance="fill">
-            <mat-label>Enter Zip Code:</mat-label>
-            <input matInput id="ZipCode" placeholder="Zip Code" pattern="^\d{5}?" minlength="5" maxlength="5" [(ngmodel)]="ZipCode">
-          </mat-form-field>
+            <ion-label>Enter Zip Code:</ion-label>
+            <ion-input pattern="^\d{5}?" [(ngModel)]="ZipCode" text-right name="ZipCode"></ion-input>
         </ion-col>      
+      </ion-row>
+      <ion-row>
         <ion-col>
-            <button id="ZipCodeSubmit" mat-raised-button (click)="submitZipCode()" ngmodel="[(ZipCode)]">Submit</button>
-        </ion-col>
-        <ion-col>
-          <p>{{ZipCode}}</p>
+          <button id="ZipCodeSubmit" (click)="ZipCodeSubmit()">Submit</button>
       </ion-col>
       </ion-row>
     </ion-grid>

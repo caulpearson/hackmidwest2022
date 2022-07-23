@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl }  from '@angular/forms';
 
 @Component({
   selector: 'app-zipcodepicker',
@@ -8,7 +7,7 @@ import { FormControl }  from '@angular/forms';
 })
 export class ZipcodepickerPage implements OnInit {
 
-  ZipCodeControl = new FormControl('');
+  ZipCode: string;
 
   constructor() { }
 
@@ -16,7 +15,7 @@ export class ZipcodepickerPage implements OnInit {
   }
 
   ZipCodeSubmit(): void {
-    console.log(this.ZipCodeControl.value);
+    console.log(this.ZipCode);
   }
   
 }
