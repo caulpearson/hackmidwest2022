@@ -5,21 +5,23 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Enter Zip Code:</mat-label>
-          <input matInput id="ZipCode" placeholder="Zip Code" pattern="^\d{5}?" minlength="5" maxlength="5">
-        </mat-form-field>
+  <div id="ZipCodeSelector">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter Zip Code:</mat-label>
+            <input matInput id="ZipCode" placeholder="Zip Code" pattern="^\d{5}?" minlength="5" maxlength="5" [(ngmodel)]="ZipCode">
+          </mat-form-field>
+        </ion-col>      
+        <ion-col>
+            <button id="ZipCodeSubmit" mat-raised-button (click)="submitZipCode()" ngmodel="[(ZipCode)]">Submit</button>
+        </ion-col>
+        <ion-col>
+          <p>{{ZipCode}}</p>
       </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-          <button id="ZipCodeSubmit" mat-raised-button>Submit</button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      </ion-row>
+    </ion-grid>
+  </div>
 
 </ion-content>
