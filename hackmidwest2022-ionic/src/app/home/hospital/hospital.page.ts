@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { LocationService } from 'src/app/service/location.service';
 import { HospitalService } from './service/hospital.service';
 
@@ -8,12 +9,36 @@ import { HospitalService } from './service/hospital.service';
   styleUrls: ['./hospital.page.scss'],
 })
 export class HospitalPage implements OnInit {
-
-  constructor(private hospitalService: HospitalService, private locationService: LocationService) { }
+  hospitals: any;
+  cities = [];
+  constructor(private hospitalService: HospitalService, private locationService: LocationService,
+    private navCtrl: NavController) { }
 
   ngOnInit() {
-    // this.hospitalService.getCovidHospitalDataByState(this.locationService.getState()).subscribe(res=>{
-
+    this.hospitalService.getCovidHospitalDataByZipcode(this.locationService.getZipcode()).subscribe(res=>{
+      this.hospitals = res;
+    });
+    // if(this.locationService.getState() === '' && this.locationService.getZipcode() === ''){
+    //   this.navCtrl.navigateBack('/statepicker');
+    //   return;
+    // }
+    // console.log(this.locationService.getState());
+    // this.hospitalService.getCovidHospitalDataByState(this.locationService.getState()).subscribe((res)=> {
+    //   const lookup = {};
+    //   const result = [];
+    //   // eslint-disable-next-line guard-for-in
+    //   for(const num in res){
+    //     // eslint-disable-next-line @typescript-eslint/dot-notation, @typescript-eslint/quotes
+    //     const city = res[num]['city'];
+    //     if(!(city in lookup)){
+    //       lookup[city] = 1;
+    //       result.push(city);
+    //     }
+    //   }
+    //   this.cities = result;
+    //   console.log(this.cities);
+    //   console.log(res);
+    //   this.hospitals = res;
     // });
   }
 
