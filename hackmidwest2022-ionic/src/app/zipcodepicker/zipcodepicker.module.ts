@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -9,7 +9,7 @@ import { ZipcodepickerPageRoutingModule } from './zipcodepicker-routing.module';
 import { ZipcodepickerPage } from './zipcodepicker.page';
 
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input'; 
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -18,7 +18,8 @@ import { MatInputModule } from '@angular/material/input';
     IonicModule,
     MatInputModule,
     MatButtonModule,
-    ZipcodepickerPageRoutingModule
+    ZipcodepickerPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [ZipcodepickerPage]
 })
