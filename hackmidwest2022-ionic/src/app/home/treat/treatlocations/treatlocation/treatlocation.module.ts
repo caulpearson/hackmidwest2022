@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +15,7 @@ import { TreatlocationPage } from './treatlocation.page';
     IonicModule,
     TreatlocationPageRoutingModule
   ],
-  declarations: [TreatlocationPage]
+  declarations: [TreatlocationPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TreatlocationPageModule {}
