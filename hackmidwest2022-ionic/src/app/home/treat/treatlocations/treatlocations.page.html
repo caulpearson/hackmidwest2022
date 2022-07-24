@@ -14,7 +14,7 @@
         <ion-item *ngFor="let location of locations" (click)="setLocation(location.geopoint.coordinates[1], location.geopoint.coordinates[0])" [routerLink]="['/','home','treat', 'treatlocations','treatlocation']">
          <ion-label>
            <h2>{{ location.provider_name }}</h2>
-           <p2>{{ location.street_address }}</p2>
+           <p>{{ location.street_address }}</p>
          </ion-label>
         </ion-item>
      </ion-col>
