@@ -16,6 +16,9 @@ export class TreatService {
   getCovidTreatmentDataByState(state: String): Observable<Object>{
     return this.http.get('https://healthdata.gov/resource/6m8a-tsjg.json?state='+state);
   }
+  getCovidTreatmentDataByStateAndCity(state: string,city: string): Observable<Object>{
+    return this.http.get('https://healthdata.gov/resource/6m8a-tsjg.json?state='+state+'&city='+city);
+  }
   getCovidTreatmentDataByZipcode(zipcode: String): Observable<Object>{
     return this.http.get('https://healthdata.gov/resource/6m8a-tsjg.json?zip='+zipcode);
   }

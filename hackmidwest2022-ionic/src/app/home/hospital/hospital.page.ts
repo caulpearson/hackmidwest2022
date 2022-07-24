@@ -10,6 +10,7 @@ import { HospitalService } from './service/hospital.service';
 })
 export class HospitalPage implements OnInit {
   hospitals: any;
+  state = '';
   hospitalsLocated = 0;
   cities = [];
   constructor(private hospitalService: HospitalService, private locationService: LocationService,
@@ -41,6 +42,7 @@ export class HospitalPage implements OnInit {
       this.cities = result;
       console.log(this.cities);
       console.log(res);
+      this.state = this.locationService.getState();
       this.hospitals = res;
     });
   }

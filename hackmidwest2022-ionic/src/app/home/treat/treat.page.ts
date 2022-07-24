@@ -10,6 +10,7 @@ import { TreatService } from './service/treat.service';
 })
 export class TreatPage implements OnInit {
   treatments: any;
+  state = '';
   treatmentsLocated = 0;
   cities = [];
   constructor(private locationService: LocationService, private treatmentService: TreatService,
@@ -42,6 +43,7 @@ export class TreatPage implements OnInit {
       this.cities = result;
       console.log(this.cities);
       console.log(res);
+      this.state = this.locationService.getState();
       this.treatments = res;
     });
   }

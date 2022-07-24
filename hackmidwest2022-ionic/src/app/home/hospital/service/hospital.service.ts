@@ -15,6 +15,9 @@ export class HospitalService {
   getCovidHospitalDataByState(state: String): Observable<Object>{
     return this.http.get('https://healthdata.gov/resource/ieks-f4qs.json?state='+state);
   }
+  getCovidHospitalDataByStateAndCity(state: String,city: String): Observable<Object>{
+    return this.http.get('https://healthdata.gov/resource/ieks-f4qs.json?state='+state+'&city='+city);
+  }
   getCovidHospitalDataByZipcode(zipcode: String): Observable<Object>{
     return this.http.get('https://healthdata.gov/resource/ieks-f4qs.json?zip_code='+zipcode);
   }

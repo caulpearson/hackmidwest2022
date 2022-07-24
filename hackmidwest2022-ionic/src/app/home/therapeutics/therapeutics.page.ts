@@ -11,6 +11,7 @@ import { TherapeuticsService } from './service/therapeutics.service';
 export class TherapeuticsPage implements OnInit {
   therapeutics: any;
   therapeuticsLocated = 0;
+  state = '';
   cities = [];
   constructor(private therapeuticsService: TherapeuticsService, private locationService: LocationService,
     private navCtrl: NavController) { }
@@ -42,6 +43,7 @@ export class TherapeuticsPage implements OnInit {
       this.cities = result;
       console.log(this.cities);
       console.log(res);
+      this.state = this.locationService.getState();
       this.therapeutics = res;
     });
   }

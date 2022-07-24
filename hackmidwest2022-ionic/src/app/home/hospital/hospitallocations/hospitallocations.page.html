@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>hospitallocations</ion-title>
+    <ion-title>Hospital Locations</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <ion-item *ngFor="let location of locations" [routerLink]="['/','home','hospital', 'hospitallocations']">
+         <ion-label>
+           <h2>{{ location.facility_name }}</h2>
+         </ion-label>
+        </ion-item>
+     </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

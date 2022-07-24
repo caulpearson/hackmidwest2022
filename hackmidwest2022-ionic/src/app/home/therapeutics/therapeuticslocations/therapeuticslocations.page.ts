@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LocationService } from 'src/app/service/location.service';
+import { TherapeuticsService } from '../service/therapeutics.service';
 
 @Component({
   selector: 'app-therapeuticslocations',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./therapeuticslocations.page.scss'],
 })
 export class TherapeuticslocationsPage implements OnInit {
-
-  constructor() { }
+  locations: any;
+  constructor(private locationsService: LocationService, private therapeuticsService: TherapeuticsService) { }
 
   ngOnInit() {
+    this.therapeuticsService.getCovidTherapeuticsDataByStateAndCity(
+      this.locationsService.getState(),
+      this.locationsService.getCity()
+    ).subscribe((res)=> {
+      this.locations = res;
+    });
   }
 
 }
