@@ -11,7 +11,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2" text-center>
-        <ion-item *ngFor="let location of locations" [routerLink]="['/','home','hospital', 'hospitallocations','hospitallocation']">
+        <ion-item *ngFor="let location of locations" (click)="setLocation(location.georeference.coordinates[1],location.georeference.coordinates[0])" [routerLink]="['/','home','hospital', 'hospitallocations','hospitallocation']">
          <ion-label>
            <h2>{{ location.facility_name }}</h2>
          </ion-label>

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HospitallocationPageRoutingModule } from './hospitallocation-routing.module';
 
 import { HospitallocationPage } from './hospitallocation.page';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { HospitallocationPage } from './hospitallocation.page';
     IonicModule,
     HospitallocationPageRoutingModule
   ],
-  declarations: [HospitallocationPage]
+  declarations: [HospitallocationPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HospitallocationPageModule {}

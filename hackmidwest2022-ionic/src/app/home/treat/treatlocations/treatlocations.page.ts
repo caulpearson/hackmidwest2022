@@ -19,5 +19,9 @@ export class TreatlocationsPage implements OnInit {
       this.locations = res;
     });
   }
-
+  setLocation(latitude, longitude): void {
+    console.log(latitude);
+    console.log(longitude);
+    this.locationsService.setTreatLocation(latitude,longitude);
+  }
 }

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TherapeuticslocationPageRoutingModule } from './therapeuticslocation-routing.module';
 
 import { TherapeuticslocationPage } from './therapeuticslocation.page';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,7 @@ import { TherapeuticslocationPage } from './therapeuticslocation.page';
     IonicModule,
     TherapeuticslocationPageRoutingModule
   ],
-  declarations: [TherapeuticslocationPage]
+  declarations: [TherapeuticslocationPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TherapeuticslocationPageModule {}

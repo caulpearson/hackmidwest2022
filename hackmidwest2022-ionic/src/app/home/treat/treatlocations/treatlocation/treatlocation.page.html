@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/treat/treatlocations"></ion-back-button>
+    </ion-buttons>
     <ion-title>treatlocation</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <capacitor-google-maps #map></capacitor-google-maps>
+    </ion-row>
+  </ion-grid>
 </ion-content>

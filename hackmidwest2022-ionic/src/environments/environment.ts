@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  mapsKey: 'AIzaSyCdiU7Lc_ihFmnahQ9p2DwROGJ6XinFTMA'
+  mapsKey: 'AIzaSyBM5UCpMVjgY-DOwxsBRZ9u8B0ojuFsgJ8'
 };
 
 /*
