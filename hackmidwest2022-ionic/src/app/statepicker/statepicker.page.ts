@@ -117,6 +117,6 @@ stateCode: object = {
   ngOnInit() {
   }
   setState(state: string): void {
-    this.locationService.setState(state);
+    this.locationService.setState(this.stateCode[state]);
   }
 }
