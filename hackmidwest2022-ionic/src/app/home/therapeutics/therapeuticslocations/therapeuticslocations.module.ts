@@ -15,6 +15,7 @@ import { TherapeuticslocationsPage } from './therapeuticslocations.page';
     IonicModule,
     TherapeuticslocationsPageRoutingModule
   ],
-  declarations: [TherapeuticslocationsPage]
+  declarations: [TherapeuticslocationsPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TherapeuticslocationsPageModule {}
