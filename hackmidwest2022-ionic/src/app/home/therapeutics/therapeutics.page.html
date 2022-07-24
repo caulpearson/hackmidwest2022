@@ -1,9 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>therapeutics</ion-title>
+    <ion-title>{{therapeuticsLocated}} Therapeutics Located</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row class="ion-justify-content-cen">
+      <ion-col size="12">
+        <!-- <ion-button color="primary">Continue to the state selector</ion-button> -->
+        <ion-text>Please select your state from the list below</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <ion-item *ngFor="let therapeutic of therapeutics" (click)="setTherapeutic(therapeutic)" [routerLink]="['/','home','therapeutics']">
+         <ion-label>
+           <h2>{{ therapeutic.address1 }}</h2>
+           <p>{{ therapeutic.city }}</p>
+           <p>{{ therapeutic.state_code }}</p>
+         </ion-label>
+        </ion-item>
+     </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

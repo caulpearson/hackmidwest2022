@@ -10,6 +10,7 @@ import { HospitalService } from './service/hospital.service';
 })
 export class HospitalPage implements OnInit {
   hospitals: any;
+  hospitalsLocated = 0;
   cities = [];
   constructor(private hospitalService: HospitalService, private locationService: LocationService,
     private navCtrl: NavController) { }
@@ -17,6 +18,8 @@ export class HospitalPage implements OnInit {
   ngOnInit() {
     this.hospitalService.getCovidHospitalDataByZipcode(this.locationService.getZipcode()).subscribe(res=>{
       this.hospitals = res;
+      console.log(res);
+      this.hospitalsLocated = this.hospitals.length;
     });
     // if(this.locationService.getState() === '' && this.locationService.getZipcode() === ''){
     //   this.navCtrl.navigateBack('/statepicker');
@@ -41,5 +44,7 @@ export class HospitalPage implements OnInit {
     //   this.hospitals = res;
     // });
   }
-
+  setHospital(hospital: any): void {
+    console.log(hospital);
+  }
 }
