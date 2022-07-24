@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: TherapeuticsPage
+  },
+  {
+    path: 'therapeuticslocations',
+    loadChildren: () => import('./therapeuticslocations/therapeuticslocations.module').then( m => m.TherapeuticslocationsPageModule)
   }
 ];
 
