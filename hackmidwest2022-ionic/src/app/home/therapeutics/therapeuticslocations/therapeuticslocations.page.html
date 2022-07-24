@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home/therapeutics"></ion-back-button>
     </ion-buttons>
-    <ion-title>Therapeutics Locations</ion-title>
+    <ion-title>Therapeutics Locations in {{locations[0].city}}, {{locations[0].state_code}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,6 +14,7 @@
         <ion-item *ngFor="let location of locations" [routerLink]="['/','home','hospital', 'hospitallocations','hospitallocation']">
          <ion-label>
            <h2>{{ location.provider_name }}</h2>
+           <p>{{ location.address1 }} {{ location.address2 }} , {{ location.zip_code }}</p>
          </ion-label>
         </ion-item>
      </ion-col>
