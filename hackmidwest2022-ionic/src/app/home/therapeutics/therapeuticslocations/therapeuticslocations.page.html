@@ -14,6 +14,7 @@
         <ion-item *ngFor="let location of locations" (click)="setLocation(location.geocoded_address.coordinates[1], location.geocoded_address.coordinates[0])" [routerLink]="['/','home','therapeutics', 'therapeuticslocations','therapeuticslocation']">
          <ion-label>
            <h2>{{ location.provider_name }}</h2>
+           <p>{{ location.address1 }} {{ location.address2 }} {{ location.city }}, {{ location.state_code }} {{ location.zip }}</p>
          </ion-label>
         </ion-item>
      </ion-col>
