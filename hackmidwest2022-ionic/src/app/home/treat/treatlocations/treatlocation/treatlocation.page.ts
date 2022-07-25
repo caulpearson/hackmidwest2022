@@ -30,7 +30,7 @@ export class TreatlocationPage implements OnInit {
   async createMap(latitude: number, longitude: number){
     this.newMap = await GoogleMap.create({
       id: 'this-map',
-      apiKey: 'AIzaSyDFE7V-XNJ_StdXytlOaOXX7HnOlMgDgjc',
+      apiKey: '',
       element: this.mapRef.nativeElement,
       config: {
         center: {
