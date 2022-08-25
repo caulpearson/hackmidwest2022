@@ -18,6 +18,7 @@ export class HospitallocationPage implements OnInit {
   location: any;
   latitude: number;
   longitude: number;
+  hospitalLocationInfo = '';
   constructor(private locationService: LocationService) { }
 
   ngOnInit() {
@@ -28,12 +29,13 @@ export class HospitallocationPage implements OnInit {
   }
 
   ionViewDidEnter(){
+    this.hospitalLocationInfo = this.locationService.getHospitalInfo();
     this.createMap(this.locationService.getHospitalLatitude(), this.locationService.getHospitalLongitude());
   }
   async createMap(latitude: number, longitude: number){
     this.newMap = await GoogleMap.create({
       id: 'this-map',
-      apiKey: '',
+      apiKey: environment.mapsKey,
       element: this.mapRef.nativeElement,
       config: {
         center: {

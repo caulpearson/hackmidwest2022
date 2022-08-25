@@ -19,9 +19,12 @@ export class HospitallocationsPage implements OnInit {
       this.locations = res;
     });
   }
-  setLocation(latitude, longitude): void {
+  setLocation(latitude, longitude, name, bedCount): void {
     console.log(latitude);
     console.log(longitude);
     this.locationsService.setHospitalLocation(latitude,longitude);
+    const infoStr = name + ' - ' + bedCount + ' beds';
+    console.log(infoStr);
+    this.locationsService.setHospitalInfo(infoStr);
   }
 }

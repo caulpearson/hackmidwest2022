@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap } from '@capacitor/google-maps';
 import { LocationService } from 'src/app/service/location.service';
 import { CapacitorGoogleMaps } from '@capacitor-community/capacitor-googlemaps-native';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-therapeuticslocation',
   templateUrl: './therapeuticslocation.page.html',
@@ -15,6 +16,7 @@ export class TherapeuticslocationPage implements OnInit {
   location: any;
   latitude: number;
   longitude: number;
+  therapeuticsLocationInfo = '';
   constructor(private locationService: LocationService) { }
 
   ngOnInit() {
@@ -25,12 +27,13 @@ export class TherapeuticslocationPage implements OnInit {
   }
 
   ionViewDidEnter(){
+    this.therapeuticsLocationInfo = this.locationService.getTherapeuticsInfo();
     this.createMap(this.locationService.getTherapeuticsLatitude(), this.locationService.getTherapeuticsLongitude());
   }
   async createMap(latitude: number, longitude: number){
     this.newMap = await GoogleMap.create({
       id: 'this-map',
-      apiKey: '',
+      apiKey: environment.mapsKey,
       element: this.mapRef.nativeElement,
       config: {
         center: {

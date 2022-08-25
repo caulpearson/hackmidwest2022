@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home/therapeutics"></ion-back-button>
     </ion-buttons>
-    <ion-title>Therapeutics Locations</ion-title>
+    <ion-title>Therapeutics Locations in {{city}}, {{state}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2" text-center>
-        <ion-item *ngFor="let location of locations" (click)="setLocation(location.geocoded_address.coordinates[1], location.geocoded_address.coordinates[0])" [routerLink]="['/','home','therapeutics', 'therapeuticslocations','therapeuticslocation']">
+        <ion-item *ngFor="let location of locations" (click)="setLocation(location.geocoded_address.coordinates[1], location.geocoded_address.coordinates[0],location.provider_name, location.order_label, location.courses_available)" [routerLink]="['/','home','therapeutics', 'therapeuticslocations','therapeuticslocation']">
          <ion-label>
            <h2>{{ location.provider_name }}</h2>
            <p>{{ location.address1 }} {{ location.address2 }} {{ location.city }}, {{ location.state_code }} {{ location.zip }}</p>

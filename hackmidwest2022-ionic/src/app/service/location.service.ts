@@ -19,6 +19,9 @@ export class LocationService {
   treatLongitude;
   therapeuticsLatitude;
   therapeuticsLongitude;
+  hospitalInfo;
+  treatInfo;
+  therapeuticsInfo;
   constructor() { }
 
   setState(state: string): void {
@@ -77,5 +80,23 @@ export class LocationService {
   setTherapeuticsLocation(latitude, longitude): void {
     this.therapeuticsLatitude = latitude;
     this.therapeuticsLongitude = longitude;
+  }
+  getHospitalInfo(): string {
+    return this.hospitalInfo;
+  }
+  getTreatInfo(): string {
+    return this.treatInfo;
+  }
+  getTherapeuticsInfo(): string {
+    return this.therapeuticsInfo;
+  }
+  setHospitalInfo(hospitalInfo): void {
+    this.hospitalInfo = hospitalInfo;
+  }
+  setTreatInfo(treatInfo): void {
+    this.treatInfo = treatInfo;
+  }
+  setTherapeuticsInfo(therapeuticsInfo): void {
+    this.therapeuticsInfo = therapeuticsInfo;
   }
 }

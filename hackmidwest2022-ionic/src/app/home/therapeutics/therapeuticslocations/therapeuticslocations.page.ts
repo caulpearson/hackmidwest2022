@@ -9,6 +9,8 @@ import { TherapeuticsService } from '../service/therapeutics.service';
 })
 export class TherapeuticslocationsPage implements OnInit {
   locations: any;
+  state = '';
+  city = '';
   constructor(private locationsService: LocationService, private therapeuticsService: TherapeuticsService) { }
 
   ngOnInit() {
@@ -17,11 +19,16 @@ export class TherapeuticslocationsPage implements OnInit {
       this.locationsService.getCity()
     ).subscribe((res)=> {
       this.locations = res;
+      this.state = this.locationsService.getState();
+      this.city = this.locationsService.getCity();
     });
   }
-  setLocation(latitude, longitude): void {
+  setLocation(latitude, longitude, providerName, orderLabel, coursesAvailable): void {
     console.log(latitude);
     console.log(longitude);
     this.locationsService.setTherapeuticsLocation(latitude, longitude);
+    const infoStr = providerName + ' - ' + orderLabel + '(' + coursesAvailable + ' treatment courses available)';
+    console.log(infoStr);
+    this.locationsService.setTherapeuticsInfo(infoStr);
   }
 }
