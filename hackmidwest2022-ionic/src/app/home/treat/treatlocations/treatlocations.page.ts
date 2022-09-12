@@ -9,6 +9,9 @@ import { TreatService } from '../service/treat.service';
 })
 export class TreatlocationsPage implements OnInit {
   locations: any;
+  city: string;
+  state: string;
+
   constructor(private locationsService: LocationService, private treatService: TreatService) { }
 
   ngOnInit() {
@@ -17,6 +20,8 @@ export class TreatlocationsPage implements OnInit {
       this.locationsService.getCity()
     ).subscribe((res)=> {
       this.locations = res;
+      this.city = this.locations[0].city;
+      this.state = this.locations[0].state;
     });
   }
   setLocation(latitude, longitude, providerName): void {

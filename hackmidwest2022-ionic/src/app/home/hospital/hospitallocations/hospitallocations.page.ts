@@ -9,6 +9,8 @@ import { HospitalService } from '../service/hospital.service';
 })
 export class HospitallocationsPage implements OnInit {
   locations: any;
+  state: string;
+  city: string;
   constructor(private locationsService: LocationService, private hospitalService: HospitalService) { }
 
   ngOnInit() {
@@ -17,6 +19,8 @@ export class HospitallocationsPage implements OnInit {
       this.locationsService.getCity()
     ).subscribe((res)=> {
       this.locations = res;
+      this.city = this.locations[0].city;
+      this.state = this.locations[0].state;
     });
   }
   setLocation(latitude, longitude, name, bedCount): void {
