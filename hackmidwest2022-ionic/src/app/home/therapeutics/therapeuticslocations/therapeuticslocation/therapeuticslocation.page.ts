@@ -28,7 +28,9 @@ export class TherapeuticslocationPage implements OnInit {
 
   ionViewDidEnter(){
     this.therapeuticsLocationInfo = this.locationService.getTherapeuticsInfo();
-    this.createMap(this.locationService.getTherapeuticsLatitude(), this.locationService.getTherapeuticsLongitude());
+    this.latitude = this.locationService.getTherapeuticsLatitude();
+    this.longitude = this.locationService.getTherapeuticsLongitude();
+    this.createMap(this.latitude, this.longitude);
   }
   async createMap(latitude: number, longitude: number){
     this.newMap = await GoogleMap.create({
@@ -37,16 +39,16 @@ export class TherapeuticslocationPage implements OnInit {
       element: this.mapRef.nativeElement,
       config: {
         center: {
-          lat: latitude,
-          lng: longitude
+          lat: +latitude,
+          lng: +longitude
         },
         zoom: 8
       },
     });
     this.newMap.addMarker({
       coordinate: {
-        lat: latitude,
-        lng: longitude
+        lat: +latitude,
+        lng: +longitude
       },
       title: 'Marker'
     });
